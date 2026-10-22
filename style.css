@@ -8,17 +8,17 @@ body
 }
 h1  {   
     font-size: 60px;
-    color: rgb(3, 35, 3);
-    border-bottom: 4px solid rgb(0, 0, 0);
-    padding-bottom: 20px;
-    margin-top: 20px;
+    color: rgb(95, 60, 29);
+    border-wr: 4px solid rgb(0, 0, 0);
+    padding-bottom: 10px;
+    margin-top: 10px;
     margin-bottom: 10px;
-    background-size: cover;
-    background-position: center;
+    background-color: rgb(187, 232, 187);
+    background-position:center;
 
     }
 h2  {
-    font-size: 30px;
+    font-size: 25px;
     color: rgb(4, 119, 4);
     border-bottom:3px solid black;
     margin-top: 10px;
@@ -41,44 +41,86 @@ h3
         font-weight: bold;
         margin-bottom: 10px;
     }
- 
+ /* hide the checkbox and burger menu by default */
 #menu-toggle,
 .burger-menu {
     display:none
 }
+/*arrages the menu links in a row and removes the bullet points and adds some spacing between them*/
 .menu {
     display: flex;
     justify-content: center;
-    gap: 18px;
-    list-style: none;padding: 1px;;
+    gap:18px;
+    list-style: none;
+    padding: 0;
     margin: auto;
 }
+/*navigation container*/
 nav 
 {
     display:flex;
     gap:20px;
     list-style: none;
 }
-.nav a
+/*changes the color of the links in the navigation bar and adds a hover effect*/
+nav a
 {
-color: brown;
+color: rgb(119, 70, 10);
 }
-.nav a:hover
+nav a:hover
 {
     background-color: beige;
 }
 @media (max-width: 600px)
 {
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+ h1 {
+        order: -1;
+        width: 80%;
+        font-size: 40px;
+        margin: 0px;
+        flex-direction: column;
+        align-items: center;
+    }
     .burger-menu 
     {
-    display: block;
-    }
-    nav
-    {
-        display: none;
-        flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    font-size: 42px;
+    width: 80px;
+    box-sizing: border-box;
+    justify-content: center;
+    background-color: rgb(177, 233, 177);
+    border: 4px solid black;
+    
     } 
-    #menu-toggle:checked+.burger-menu+nav {
-        display: flex;
+    /* hide the menu links by default */
+    nav 
+    { display: none;
+    position: static;
+    width: 100%;
+    cursor: pointer;
     }
-} 
+    /* show the menu links when the checkbox is checked */
+    #menu-toggle:checked + .burger-menu + nav
+    {
+        display: block;
+    }
+
+.menu {
+    flex-direction: column;
+}
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+    position: absolute;
+    left: 20px;
+}
