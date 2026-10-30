@@ -1,46 +1,78 @@
 body
 {
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
     font-family: 'Times New Roman', Times, serif;
     font-size: 18px;
     text-align: center;
-    margin: 10px;
+    margin: 0px;
     padding-top: 10px;
 }
-h1  {   
-    font-size: 60px;
-    color: rgb(95, 60, 29);
-    border-wr: 4px solid rgb(0, 0, 0);
-    padding-bottom: 10px;
-    margin-top: 10px;
+header
+{
+    grid-row: 1;
+    position: relative;
+    isolation: isolate;
+    background-image: url("images/background.jpg");
+    filter: contrast(120%);
+    background-size: contain;
+    background-position: center;
+    height: 150px;
     margin-bottom: 10px;
-    background-color: rgb(187, 232, 187);
-    background-position:center;
+}
+main{
+    grid-row: 2;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+h1  {   
+    font-size: 55px;
+    color: rgb(255, 255, 255);
+    padding-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 
     }
-h2  {
-    font-size: 25px;
-    color: rgb(4, 119, 4);
-    border-bottom:3px solid black;
-    margin-top: 10px;
     
-    
-    }
-h3
+h2
     {
-        font-size:30px;
-        font-style:italic;
-        color: rgb(6, 132, 6);
+        font-size:20px;
+        font-style:bold;
+        color: rgb(0, 0, 0);
         font-weight: bold;
-        border-color:black;
-        margin-top: 40px;
-        margin-bottom: 40px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+    h3
+    {
+        font-size: 20px;
+        font-style: bold;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    p
+    {
+        font-size: 18px;
+        font-weight: normal;
+        color: rgb(0, 0, 0);
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
     p1
     {
+        font-size: 18px;
         margin-top: 10px;
         font-weight: bold;
         margin-bottom: 10px;
+        color:rgb(0, 0, 0);
     }
+
  /* hide the checkbox and burger menu by default */
 #menu-toggle,
 .burger-menu {
@@ -50,7 +82,7 @@ h3
 .menu {
     display: flex;
     justify-content: center;
-    gap:18px;
+    gap: 10px;
     list-style: none;
     padding: 0;
     margin: auto;
@@ -65,37 +97,54 @@ nav
 /*changes the color of the links in the navigation bar and adds a hover effect*/
 nav a
 {
-color: rgb(119, 70, 10);
+color: rgb(255, 255, 255);
 }
 nav a:hover
 {
-    background-color: beige;
+    background-color: rgb(231, 77, 25);
 }
-@media (max-width: 600px)
+@media (min-width: 601px)
+{ 
+    h1{
+        position: relative;
+        text-align: center;
+    }
+    .logo {
+    width: 90px;
+    height: auto;
+    position: absolute;
+    left: 50px;
+    top: auto;
+    filter: saturate(300%);
+}
+}
+@media (max-width: 600px)/*media query for screens smaller than 600px*/
 {
     header {
-        display: flex;
-        flex-wrap: wrap;
+        height: auto;
+        min-height: 220px;
+        display: grid;
+        grid-template-columns: 1fr;
         align-items: center;
     }
  h1 {
-        order: -1;
+        grid-column: 1;
+        grid-row: 1;
         width: 80%;
-        font-size: 40px;
+        font-size: 30px;
         margin: 0px;
         flex-direction: column;
         align-items: center;
     }
     .burger-menu 
     {
-    display: flex;
-    flex-direction: column;
-    font-size: 42px;
-    width: 80px;
-    box-sizing: border-box;
-    justify-content: center;
-    background-color: rgb(177, 233, 177);
-    border: 4px solid black;
+    display: block;
+    grid-column: 2;
+    grid-row: 1;
+    padding: 10px;
+    font-size: 32px;
+    background-color: rgb(3, 59, 3);
+
     
     } 
     /* hide the menu links by default */
@@ -114,13 +163,203 @@ nav a:hover
 .menu {
     flex-direction: column;
 }
-}
+    
+
 
 .logo {
-    width: 80px;
-    height: auto;
-    margin-right: 10px;
+    width: 60px;
+    height: auto;    
+    position: static;
     vertical-align: middle;
-    position: absolute;
-    left: 20px;
+    left: 0px;
+    top: 40px;
+    filter: saturate(200%);
+    
+    
+}
+}
+.pillars {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+.pillars li {
+    background-color: #B7D3B0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.Sustainability {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    list-style-type: none;
+    padding: 0;
+}
+.Sustainability li {
+    background-color: #B7D3B0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+.Fashion-gallery summary {
+    font-weight: bold;
+    text-align: center;
+    list-style: none;
+    cursor: pointer;
+    background-color: #8cc276e5;
+    padding: 20px;
+    border-radius:10px;
+}
+.Fashion-gallery .gallery 
+{
+display: flex;
+overflow-x:auto;
+scroll-snap-type: x mandatory;
+gap: 10px;
+margin-top: 20px;
+}
+.Fashion-gallery .gallery img {
+    flex: 0 0 100%;
+    width: 100%;
+    height:300px;
+    object-fit: contain;
+    scroll-snap-align: start;
+}
+
+.Companies {
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.Companies summary {
+    display: block;
+    list-style: none;
+
+}
+.Companies img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+.Companies img:hover
+{
+    filter: grayscale(80%) blur(2px);
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+.Three-Rs h3
+{
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 0;
+}
+.Three-Rs p {
+text-align: center;
+font-size: 16px;
+line-height: 1.5;
+}
+.Three-Rs
+{
+display: grid;
+list-style: none;
+grid-template-columns:repeat(auto-fit,minmax(200px, 1fr)) ;
+gap: 10px;
+}
+.Three-Rs li
+{
+    background-color:rgb(139, 190, 139) ;
+
+}
+.Waste-Impact
+{
+display: flex;
+gap: 20px;
+width: 100%;
+margin: 30px 0;
+}
+.Waste-Impact div
+{
+    flex: 1;
+    text-align: center;
+}
+.Waste-Impact img
+{
+    width:100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.Waste-Impact h3
+{
+    margin: 10px 0;
+}
+.Waste-Impact p
+{
+line-height: 1.5;
+}
+.land-blend 
+{
+    background-color: #B7D3B0;
+}
+.land-blend img
+{
+    mix-blend-mode: multiply;
+}
+.EcoChallenges
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: antiquewhite;
+    border-radius: 15px;
+}
+.EcoChallenges img
+{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    grid-column: 1;
+    grid-row: 1/3;
+}
+.EcoChallenges h3
+{
+grid-column: 2;
+align-self: end;
+margin:0
+}
+.EcoChallenges p
+{
+    grid-column: 2;
+    align-self: start;
+    line-height: 1.6;
+    margin: 0;
+}
+footer {
+    grid-row: 3;
+    background-color: #B7D3B0;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
 }
