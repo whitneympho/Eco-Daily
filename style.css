@@ -183,15 +183,16 @@ nav a:hover
     
 }
 }
-.home img
+img.home
 {
     width: 100%;
+    margin:0 auto;
     max-width: 600px;
     height: 300px;
     object-fit: cover;
     border-radius: 15px;
     display: block;
-    mask-image: -webkit-linear-gradient(to bottom, black 60%, transparent 100%);
+    mask-image: radial-gradient(ellipse,black 55%,transparent 85%);
 }
 
 .pillars {
